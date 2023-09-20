@@ -5,7 +5,7 @@ import { MovieItem } from "../../components/movie-item/movie-item.js";
 import { Controls } from "../../components/controls/controls.js";
 import { getMoviesByUser } from "../../store/favorite/reducer.js";
 import classes from './Main.module.css';
-const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const Main = () => {
   const [moviesSearch, setMoviesSearch] = useState([]);
@@ -18,7 +18,7 @@ export const Main = () => {
   const searchMovies = (str, type = "all") => {
     console.log(str);
     fetch(
-      `https://www.omdbapi.com/?apikey=63be4592&s=${str}${type !== "all" ? `&type=${type}` : ""}`
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !== "all" ? `&type=${type}` : ""}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -39,7 +39,7 @@ export const Main = () => {
   useEffect(() => {
     userMovies.map((item) => item.imdbID === movieInFavorite.imdbID ? console.log("Not necessery to add this Movie : " `${item.Title}`)
       : fetch(
-        `https://www.omdbapi.com/?apikey=63be4592&i=${item.imdbID}`
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${item.imdbID}`
       )
         .then((response) => response.json())
         .then((data) => {
