@@ -11,7 +11,7 @@ export const Main = () => {
   const [moviesSearch, setMoviesSearch] = useState([]);
   const dispatch = useDispatch();
   const user = useSelector((state) => ({ ...state.auth.user }));
-  const { userMovies } = useSelector((state) => ({ ...state.favorite }));
+  const userMovies = useSelector((state) => state.favorite.userMovies);
   const userId = user?.result?._id;
   const movieInFavorite = useSelector((state) => state.favorite.movieInFavorite)
 
@@ -37,9 +37,9 @@ export const Main = () => {
   }, [userId]);
 
   useEffect(() => {
-    userMovies.map((item) => item.imdbID === movieInFavorite.imdbID ? console.log("Not necessery to add this Movie : " `${item.Title}`)
+    userMovies.map((userMovieDB) => movieInFavorite.find((favoriteMovie) => userMovieDB.imdbID === favoriteMovie.imdbID) ? console.log(`Not necessery to add to Favorite this Movie - ${userMovieDB.Title} `)
       : fetch(
-        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${item.imdbID}`
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${userMovieDB.imdbID}`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -48,7 +48,7 @@ export const Main = () => {
         })
         .catch((error) => {
           console.error(error);
-        }));
+        }));   
   }, [userMovies]);
 
   return (
