@@ -1,0 +1,10 @@
+.favoriteBlock {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.favoriteIcon {
+  cursor: pointer;
+  position: relative;
+}

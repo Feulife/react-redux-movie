@@ -1,0 +1,26 @@
+.inputField {  
+  margin: auto;
+  max-width: 50vw;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  margin: 1vh 0 1vh 0;
+  gap: 0 1vw;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(2px + 2vmin);
+  color: gray;
+}
+
+@media screen and (max-width: 767px) {
+  .inputField {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    gap: 2vh 2vw;
+    justify-content: center;
+  }
+}

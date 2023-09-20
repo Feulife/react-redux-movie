@@ -1,0 +1,43 @@
+.root {  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.container {
+  display: flex !important;
+  justify-content: space-between  !important;
+  align-items: center !important;
+  flex-direction: row;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  margin-top: 1vh;
+  gap: 5vw;
+  background-color: #1e1e1e;
+}
+
+h3, h5 {
+  font-weight: bold !important;
+}
+.rightSide {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.headerAppTitle {
+  color: white;
+  text-decoration: none;
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 35vw;
+  }
+}

@@ -1,0 +1,35 @@
+.movieItem {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(36, 37, 41);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.movieItem:not(:last-child) {
+  margin-bottom: 30px;
+  margin-right: 50px;
+}
+
+.movieItemTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.movieItemGenre {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movieItemDetails {
+  padding: 10px 20px;
+}
+
+.movieItemDescription {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
