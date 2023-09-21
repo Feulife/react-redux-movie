@@ -21,15 +21,31 @@ app.use(cors({ origin: ['*', 'https://moviemongo.vercel.app', 'https://vercel.co
 app.use("/movies", movieRoutes);
 app.use("/users", userRoutes);
 
-mongoose.connect(Db, {
-  useNewURlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => {
+const start = async () => {
+  try {
+    await mongoose.connect(Db, {
+      useNewURlParser: true,
+      useUnifiedTopology: true,
+    })
     app.listen(PORT, () => {
       console.log(`Server Running on port : ${PORT}`);
     });
-  })
-  .catch((error) => {
+  } catch (error) {
     console.log(error.message);
-  });
+  };
+}
+
+start();
+
+// mongoose.connect(Db, {
+//   useNewURlParser: true,
+//   useUnifiedTopology: true,
+// })
+//   .then(() => {
+//     app.listen(PORT, () => {
+//       console.log(`Server Running on port : ${PORT}`);
+//     });
+//   })
+//   .catch((error) => {
+//     console.log(error.message);
+//   });
