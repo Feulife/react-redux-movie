@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://react-redux-movie-chi.vercel.app"
+  baseURL: "https://movie-app-server-beryl.vercel.app/"
   // baseURL: "http://localhost:5000"
 })
 
