@@ -16,6 +16,8 @@ app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+app.use(cors({ origin: ['*', 'https://moviemongo.vercel.app/', 'https://vercel.com/feulife/moviemongo/a42a84aAbRoJsrcyXsNfCXdfhG6U', 'https://react-redux-movie-teal.vercel.app/', 'https://vercel.com/feulife/react-redux-movie/FxmZzCSrPFyeqXc1yZ2d5YLcB5BR'] }));
+
 app.use("/movies", movieRoutes);
 app.use("/users", userRoutes);
 
