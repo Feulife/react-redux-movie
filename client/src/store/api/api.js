@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000"
+  baseURL: "https://react-redux-movie-liard.vercel.app/s"
+  // baseURL: "http://localhost:5000"
 })
 
 API.interceptors.request.use((req) => {
