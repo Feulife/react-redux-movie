@@ -48,7 +48,7 @@ export const Main = () => {
         })
         .catch((error) => {
           console.error(error);
-        }));   
+        }));
   }, [userMovies]);
 
   return (
