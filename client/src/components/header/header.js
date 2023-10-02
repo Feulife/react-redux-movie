@@ -24,7 +24,7 @@ export const Header = () => {
       <Container classes={{ root: classes.container }}>
         <div>
           <Link to="/" className={classes.headerAppTitle}>
-            <h3>Movie App</h3>
+            <h3 className={classes.movieTitle}>Movie App</h3>
           </Link>
         </div>
         <Toolbar className={classes.headerAppTitle}>
